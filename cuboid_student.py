@@ -15,10 +15,10 @@ class Cuboid():
         
         #implement this!
     def get_area(self):
-        pass
+        return 2 * (self.x * self.y + self.y * self.z + self.z * self.x)
         #implement this!
     def get_volume(self):
-        pass
+        return self.x * self.y * self.z
 
     def __str__(self):
         c_str = 'Length: ' + str(self.x) + \
@@ -30,14 +30,14 @@ class Cuboid():
 
 class CCuboid(Cuboid):
     def __init__(self, x,y,z, color ):
-            Cuboid.__init__(self, x , y , z )
-            pass
+            Cuboid.__init__(self, x, y, z)
+            self.color = color
         
     def set_color(self, color):
-        pass
+        self.color = color
     
     def get_color(self):
-        pass
+        return self.color
 
     def __str__(self):
         a_str = super().__str__() + ', Color: ' + str(self.get_color())
@@ -45,9 +45,9 @@ class CCuboid(Cuboid):
 
 if __name__ == "__main__":
 
-    x=1
-    y=2
-    z=3
+    x = random.randint(1, 100)
+    y = random.randint(1, 100)
+    z = random.randint(1, 100)
     
     c = Cuboid(x,y,z)
     print(c)
