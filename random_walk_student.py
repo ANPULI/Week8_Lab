@@ -27,7 +27,17 @@ class Walker:
 # - go right one step (x += 1)
 # - go north one step (y += 1)
 # - go south one step (y -= 1)
-        random_walk_helper.run(self)
+        for i in range(self.num_steps):
+            dir = self.dice.roll()
+            if dir == 0:
+                self.x_pos -= 1
+            if dir == 1:
+                self.x_pos += 1
+            if dir == 2:
+                self.y_pos -= 1
+            if dir == 3:
+                self.y_pos += 1
+
     
     def get_position(self):
         return self.x_pos, self.y_pos
